@@ -4,6 +4,6 @@ Blake Foster @ Code Space
 
 Intro to Web Cap Stone Project
 
-Digital Resume
+My Digital Resume
 
 Built with HTMl & CSS

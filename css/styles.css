@@ -10,15 +10,9 @@ body {
   color: #252422;
   margin: 10px auto;
 
-  font-family: "ff-meta-web-pro", sans-serif;
-  text-rendering: optimizeLegibility;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
   background: #f6efe5;
-  align-items: center;
-
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 body.dark-mode {
@@ -28,8 +22,11 @@ body.dark-mode {
 
 nav {
   text-align: center;
+  position: sticky;
+  top: 0;
   padding: 1rem;
   margin: 1em;
+  background-color: inherit;
 }
 
 nav li {
@@ -52,6 +49,7 @@ nav ul {
   background-color: #eb5e28;
   justify-content: space-around;
   width: 100%;
+  color: #e7f6f2;
 }
 
 footer {
@@ -59,26 +57,36 @@ footer {
 }
 
 .hero {
-  text-align: right;
+  text-align: left;
+  font-size: x-large;
 }
 
 .herobox {
   display: flex;
+  flex-direction: row-reverse;
   margin: 0 auto;
   padding: 5rem;
   justify-content: center;
+  color: #eb5e28;
 }
 
 .herobox p {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   line-height: 1.5;
+}
+
+.statement {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 20px 0;
+  padding-bottom: 1rem;
 }
 
 .hero img {
   width: 800px;
   border-radius: 20%;
   background-image: linear-gradient(to right, #f12711, #f5af19);
-  animation: pulse 2s infinite;
+  animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
@@ -111,45 +119,29 @@ button {
 }
 
 .outsidebox {
-  text-align: left;
   margin: 1.5rem;
   padding: 2rem;
 }
 
 .workbox {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: 1.5rem;
   padding: 2rem;
+  gap: 1rem;
 }
 
 .workcard {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
   grid-column: span 2;
-  padding: 0.5rem;
-  animation: pulse 3s infinite;
+  padding: 1rem;
+  transition: 2s;
 }
-
-.workcard2 {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  justify-content: center;
-  padding: 0.5rem;
-  animation: pulse 2.5s infinite;
-}
-
-.workcard3 {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  justify-content: center;
-  padding: 0.5rem;
-  animation: pulse 3.8s infinite;
-}
-.workcard4 {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  justify-content: center;
-  grid-column: span 2;
-  padding: 0.5rem;
-  animation: pulse 2.7s infinite;
+.workcard:hover {
+  animation: shake 1.5s;
+  animation-iteration-count: infinite;
 }
 
 .tech:hover {
@@ -195,6 +187,7 @@ button {
 
 .school {
   display: flex;
+  text-align: center;
 }
 
 .card {
@@ -206,15 +199,19 @@ button {
 
 .tech {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 0.5rem;
   margin-top: 10px;
 }
 
 .techcard {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  transition: 2s;
-  height: 400px;
+  align-items: center;
+  height: 200px;
+  width: 200px;
 }
 
 .techcard img {
@@ -224,7 +221,7 @@ button {
 
 .skillsbox {
   display: flex;
-
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -241,6 +238,8 @@ button {
 
   .herobox {
     padding: 3rem;
+    flex-direction: column-reverse;
+    text-align: center;
   }
 
   .herobox p {
@@ -256,14 +255,14 @@ button {
   }
 
   .outsidebox {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
   }
 
   .workbox {
-    grid-template-columns: 1fr;
-    margin: 1rem;
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .school {
@@ -276,12 +275,13 @@ button {
   }
 
   .tech {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .techcard {
-    height: 200px;
+    height: 100px;
   }
 }
 
@@ -314,13 +314,16 @@ button {
 
   .outsidebox {
     margin: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
+    justify-content: center;
+    text-align: center;
   }
 
   .workbox {
     grid-template-columns: 1fr 1fr;
     margin: 1.5rem;
     padding: 2rem;
+    text-align: center;
   }
 
   .school {
@@ -333,11 +336,15 @@ button {
   }
 
   .tech {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
   }
 
   .techcard {
-    height: 400px;
+    height: 100px;
+    width: 100px;
   }
 }
