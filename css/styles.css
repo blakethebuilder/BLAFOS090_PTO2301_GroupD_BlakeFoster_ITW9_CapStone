@@ -59,27 +59,23 @@ footer {
 }
 
 .hero {
-  text-align: left;
+  text-align: right;
 }
 
 .herobox {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 5rem;
   justify-content: center;
 }
 
 .herobox p {
-  font-family: sans-serif;
-  font-size: 1.25rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   line-height: 1.5;
-  margin-bottom: 2rem;
 }
 
 .hero img {
-  width: 200px;
+  width: 800px;
   border-radius: 20%;
   background-image: linear-gradient(to right, #f12711, #f5af19);
   animation: pulse 2s infinite;
@@ -103,6 +99,7 @@ button {
   margin: 10px;
   padding: 10px;
   border-radius: 10%;
+  animation: pulse 2s infinite;
 }
 
 .toggle-button {
@@ -114,41 +111,86 @@ button {
 }
 
 .outsidebox {
-  position: relative;
-  justify-content: center;
-
-  justify-content: stretch;
-  text-align: center;
+  text-align: left;
   margin: 1.5rem;
-  padding: 0.5rem;
-}
-
-.tech {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-  margin-top: 10px;
+  padding: 2rem;
 }
 
 .workbox {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 1.5rem;
+  padding: 2rem;
 }
 
 .workcard {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
   grid-column: span 2;
+  padding: 0.5rem;
+  animation: pulse 3s infinite;
 }
 
 .workcard2 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
+  padding: 0.5rem;
+  animation: pulse 2.5s infinite;
 }
 
 .workcard3 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
+  padding: 0.5rem;
+  animation: pulse 3.8s infinite;
+}
+.workcard4 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  grid-column: span 2;
+  padding: 0.5rem;
+  animation: pulse 2.7s infinite;
+}
+
+.tech:hover {
+  animation: shake 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .school {
@@ -162,13 +204,17 @@ button {
   padding: 1rem;
 }
 
-.techcard {
+.tech {
   display: flex;
   justify-content: center;
-  width: 100px;
-  height: 100px;
-  margin: 5px;
+  padding: 0.5rem;
+  margin-top: 10px;
+}
+
+.techcard {
+  justify-content: center;
   transition: 2s;
+  height: 400px;
 }
 
 .techcard img {
@@ -178,12 +224,120 @@ button {
 
 .skillsbox {
   display: flex;
-  flex-direction: row;
+
   justify-content: space-between;
 }
 
-.skilltechbox {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    margin: 0;
+  }
+
+  nav li {
+    padding: 0.5rem;
+  }
+
+  .herobox {
+    padding: 3rem;
+  }
+
+  .herobox p {
+    font-size: 1rem;
+  }
+
+  .hero img {
+    width: 150px;
+  }
+
+  button {
+    padding: 5px;
+  }
+
+  .outsidebox {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .workbox {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .school {
+    flex-direction: column;
+  }
+
+  .card {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .tech {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .techcard {
+    height: 200px;
+  }
+}
+
+/* For screens larger than 768px */
+@media (min-width: 769px) {
+  body {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  nav li {
+    padding: 1rem;
+  }
+
+  .herobox {
+    padding: 5rem;
+  }
+
+  .herobox p {
+    font-size: 1.25rem;
+  }
+
+  .hero img {
+    width: 200px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  .outsidebox {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+
+  .workbox {
+    grid-template-columns: 1fr 1fr;
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+
+  .school {
+    flex-direction: row;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .tech {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .techcard {
+    height: 400px;
+  }
 }
