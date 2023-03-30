@@ -239,21 +239,11 @@ button {
 }
 
 .contact {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   text-align: center;
-  flex-wrap: wrap;
+
   justify-content: center;
   transition: 1s;
-}
-
-.contactright {
-  padding: 40px 60px;
-  flex-basis: 60%;
-}
-.contactleft {
-  padding: 40px 60px;
-  flex-basis: 60%;
 }
 
 input,
@@ -275,10 +265,6 @@ textarea {
 button {
   cursor: pointer;
   font-weight: 500;
-}
-
-&:focus {
-  outline: none;
 }
 
 .card1 {
