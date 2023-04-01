@@ -277,6 +277,15 @@ button {
   text-align: center;
 }
 
+.bgimg {
+  background-image: url(/images/20200118_190224__1_-removebg-preview.png);
+  background-position: center;
+  height: 50vh;
+  background-repeat: no-repeat;
+  justify-content: center;
+  text-align: center;
+}
+
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
   body {
